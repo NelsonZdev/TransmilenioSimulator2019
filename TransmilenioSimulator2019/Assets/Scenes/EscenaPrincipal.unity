@@ -321,9 +321,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 270de8b4c313e444aa925d795b00fcb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  claseDatos:
-    info1: 
-    dato_principal: 0
+  datosEstacion:
+  - nombreEstacion: Chapinero
+    desbloqueado: 0
 --- !u!4 &1917107887
 Transform:
   m_ObjectHideFlags: 0

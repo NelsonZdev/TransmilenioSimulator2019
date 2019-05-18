@@ -1,46 +1,74 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.IO;
 
 public class BaseDeDatos : MonoBehaviour
 {
-    [HideInInspector]
-    public Datos claseDatos;
-    private float dato;
-    private string ubicacionGuardado;
+    public List<DatosEstacion> datosEstacion;
+
     // Start is called before the first frame update
     private void Awake()
     {
-        ubicacionGuardado = Application.dataPath;
+        for (int i = 0;i< datosEstacion.Count;i++)
+        {
+            datosEstacion[i].GuardadDatos(i.ToString(), datosEstacion[i]._desbloqueado);
+            datosEstacion[i].GuardarNombre(i.ToString(), datosEstacion[i]._nombreEstacion);
+        }
+        
     }
     void Start()
     {
-        claseDatos = new Datos()
-        {
-            info1 = "NuevoJson2",
-            dato_principal = 53
-        };
-        string archivoJson = JsonUtility.ToJson(claseDatos);
-        print(archivoJson);
 
-        File.WriteAllText(ubicacionGuardado + "Base_de_Datos", archivoJson);
-        print(ubicacionGuardado);
-
-        Datos cargarDatos = JsonUtility.FromJson<Datos>(archivoJson);
-        print("float: "+cargarDatos.dato_principal);
-        print("String: " + cargarDatos.info1);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetButtonDown("Submit"))
+        {
+            for (int i = 0; i < datosEstacion.Count; i++)
+            {
+                datosEstacion[i].CargarNombre(i.ToString());
+                datosEstacion[i].CargarDatos(i.ToString());
+                print("Estacion: " + datosEstacion[i]._nombreEstacion + " Desbloqueado: " + datosEstacion[i]._desbloqueado);
+            }          
+        }
+    }
+    public void Eliminar(string llave)
+    {
+        PlayerPrefs.DeleteKey(llave);
+        PlayerPrefs.Save();
+    }
+    public void EliminarTodo()
+    {
+        PlayerPrefs.DeleteAll();
     }
 }
 [System.Serializable]
-public class Datos
+public class DatosEstacion
 {
-    public string info1;
-    public float dato_principal;
+    public string _nombreEstacion;
+    [Range(0,1)]public int _desbloqueado; // 0 = Bloqueado , 1 = Desbloqueando 
+
+    public void CargarNombre(string llave)
+    {
+        _nombreEstacion = PlayerPrefs.GetString(llave+"_string", "NombreDefecto");      
+        
+    }
+    public void CargarDatos(string llave)
+    {
+        _desbloqueado = PlayerPrefs.GetInt(llave + "_int", 0);
+    }
+    public void GuardarNombre(string llave, string nombreEstacion)
+    {
+        PlayerPrefs.SetString(llave + "_string", nombreEstacion);
+
+        PlayerPrefs.Save();
+    }
+    public void GuardadDatos(string llave,int desbloqueado)
+    {
+        PlayerPrefs.SetInt(llave + "_int", desbloqueado);
+
+        PlayerPrefs.Save();
+    }
 }
