@@ -6,7 +6,6 @@ public class PersonajeMovimiento : MonoBehaviour
 {
     [Header("Ordenar de forma decendente de 1 a ultimo")]
     public List<Transform> rutas;
-    public GameObject ubicacion;
     public float velocidad;
     [Header("Verdadero = Cuando llega a la ultima parada ya no hace nada")]
     [Header("Falso = Cuando llega a la ultima ruta regresa a la primera y comienza de nuevo")]
@@ -60,5 +59,21 @@ public class PersonajeMovimiento : MonoBehaviour
            
         }
         Debug.DrawLine(rutas[0].position, rutas[1].position,Color.red);
+    }
+    private void OnTriggerEnter2D (Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Bloqueo")
+        {
+            if(numeroRuta > 0)
+            {
+                numeroRuta--;
+                retorno = true;
+            }
+            else
+            {
+                numeroRuta++;
+                retorno = false;
+            }
+        }
     }
 }
