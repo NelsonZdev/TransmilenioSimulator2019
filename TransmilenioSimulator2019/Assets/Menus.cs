@@ -19,4 +19,8 @@ public class Menus : MonoBehaviour
 
     }
 
+    public void allOut(){
+        menu.SetBool("Panel_Compra_Open", false);
+    }
+
 }
