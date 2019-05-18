@@ -1,11 +1,11 @@
 ﻿# Tiled2Unity generated file. Do not modify by hand.
-# Wavefront file for 'map_mesh_0002.obj'
+# Wavefront file for 'Maps_mesh_0008.obj'
 
 # Vertices (Count = 4)
-v -3528 -3219 0
-v -3656 -3219 0
-v -3656 -3091 0
-v -3528 -3091 0
+v 0 -592 0
+v -128 -592 0
+v -128 -464 0
+v 0 -464 0
 
 # Texture cooridinates (Count = 4)
 vt 0 0
@@ -17,7 +17,7 @@ vt 0 1
 vn 0 0 -1
 
 # Mesh description
-g map_mesh_0002
+g Maps_mesh_0008
 
 # Faces
 f 1/1/1 2/2/1 3/3/1 4/4/1

@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: da9dec67b5af21d46ad4c00a258cf7b9
+guid: 2a13c6a225859f740a7d701df2f80530
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: map_mesh_0001
+    100000: Maps_mesh_0002
     100002: //RootNode
-    400000: map_mesh_0001
+    400000: Maps_mesh_0002
     400002: //RootNode
-    2300000: map_mesh_0001
-    3300000: map_mesh_0001
-    4300000: map_mesh_0001
+    2300000: Maps_mesh_0002
+    3300000: Maps_mesh_0002
+    4300000: Maps_mesh_0002
   externalObjects: {}
   materials:
     importMaterials: 0
@@ -41,7 +41,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.1
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
