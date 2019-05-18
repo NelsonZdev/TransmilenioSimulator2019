@@ -2,17 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class Menus : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public Animator menu;
+    bool opened = false;
+    
+    public void Presion(){
+        opened = !opened;
+
+        if(opened){
+            menu.SetBool("Panel_Compra_Open", true);
+        }
+        else{
+            menu.SetBool("Panel_Compra_Open", false);
+        }
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
