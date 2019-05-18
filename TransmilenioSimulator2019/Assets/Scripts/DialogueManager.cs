@@ -10,13 +10,13 @@ public class DialogueManager : MonoBehaviour {
 
 	private Queue<string> sentences;
 	public GameObject b;
-	private Script a = b.GetComponent<Script>();
+	public Dialogue a;
 
 
 	// Use this for initialization
 	void Start () {
 		sentences = new Queue<string>();
-		StartDialogue(a.dialogue);
+		StartDialogue(a);
 	}
 
 	public void StartDialogue (Dialogue dialogue)
@@ -59,7 +59,7 @@ public class DialogueManager : MonoBehaviour {
 
 	void EndDialogue()
 	{
-
+		b.SetActive(false);
 	}
 
 }
