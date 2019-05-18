@@ -3095,10 +3095,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rutas:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 723557783}
+  - {fileID: 1331047385}
   velocidad: 15
-  ruta_Final: 1
+  ruta_Final: 0
 --- !u!4 &713741879
 Transform:
   m_ObjectHideFlags: 0
