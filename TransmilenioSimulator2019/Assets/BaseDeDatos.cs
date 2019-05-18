@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BaseDeDatos : MonoBehaviour
 {
+    public float dato;
     // Start is called before the first frame update
     void Start()
     {
