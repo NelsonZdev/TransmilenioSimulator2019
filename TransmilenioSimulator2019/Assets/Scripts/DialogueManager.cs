@@ -8,18 +8,19 @@ public class DialogueManager : MonoBehaviour {
 	public Text nameText;
 	public Text dialogueText;
 
-	public Animator animator;
-
 	private Queue<string> sentences;
+	public GameObject b;
+	private Script a = b.GetComponent<Script>();
+
 
 	// Use this for initialization
 	void Start () {
 		sentences = new Queue<string>();
+		StartDialogue(a.dialogue)
 	}
 
 	public void StartDialogue (Dialogue dialogue)
 	{
-		animator.SetBool("IsOpen", true);
 
 		nameText.text = dialogue.name;
 
@@ -58,7 +59,7 @@ public class DialogueManager : MonoBehaviour {
 
 	void EndDialogue()
 	{
-		animator.SetBool("IsOpen", false);
+
 	}
 
 }
