@@ -9,14 +9,13 @@ public class DialogueManager : MonoBehaviour {
 	public Text dialogueText;
 
 	private Queue<string> sentences;
-	public GameObject b;
-	private Script a = b.GetComponent<Script>();
+    public Dialogue dialogue;
 
 
 	// Use this for initialization
 	void Start () {
 		sentences = new Queue<string>();
-		StartDialogue(a.dialogue);
+		StartDialogue(dialogue);
 	}
 
 	public void StartDialogue (Dialogue dialogue)
