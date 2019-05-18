@@ -190,7 +190,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1920275912}
   m_HandleRect: {fileID: 1920275911}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -350,6 +350,7 @@ GameObject:
   - component: {fileID: 19496053}
   - component: {fileID: 19496055}
   - component: {fileID: 19496054}
+  - component: {fileID: 19496056}
   m_Layer: 5
   m_Name: Termometro
   m_TagString: Untagged
@@ -414,6 +415,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19496052}
   m_CullTransparentMesh: 0
+--- !u!114 &19496056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19496052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a5cc4798478d9843a1adfd6013ca477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barra: {fileID: 667256308}
+  felicidad: 0
 --- !u!1 &103078253
 GameObject:
   m_ObjectHideFlags: 0
@@ -4034,8 +4049,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 103078255}
   m_HandleRect: {fileID: 103078254}
   m_Direction: 2
-  m_Value: 0.9999992
-  m_Size: 0.6881317
+  m_Value: 1
+  m_Size: 0.68813175
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6562,7 +6577,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2079150764}
   m_HandleRect: {fileID: 2079150763}
   m_Direction: 2
-  m_Value: 0.9999992
+  m_Value: 0.99999964
   m_Size: 0.6881317
   m_NumberOfSteps: 0
   m_OnValueChanged:
